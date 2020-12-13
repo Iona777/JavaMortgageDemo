@@ -122,4 +122,16 @@ public class BasePage
         selector.selectByValue(value);
     }
 
+    public boolean IsElementDisplayed(By by, int waitSeconds, WebDriver driver)
+    {
+        try
+        {
+            return GetVisibleElementByLocator(by, waitSeconds, driver).isDisplayed();
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
 }

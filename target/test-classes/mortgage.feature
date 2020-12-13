@@ -12,8 +12,8 @@ Feature: Mortgage
     Then the offer amount should be "<Offer Amount>"
     Examples:
       |Mortgage Reason  |Location |Number of Applicants|Annual Income|Number of Dependants |Annual Bonus  |Monthly Debt |Offer Amount |
-      |First time buyers|Scotland |1                   |30000        |2                    |2000          |500          |80,940       |
-      |First time buyers|Wales    |1                   |40000        |3                    |0             |200          |165,970      |
+      |First time buyers|Scotland |1                   |30000        |2                    |2000          |500          |86,020     |
+      |First time buyers|Wales    |1                   |40000        |3                    |0             |200          |179,600      |
 
   @mytag
   Scenario Outline: Are there any mortgages for first time buyer with these figures
@@ -25,5 +25,5 @@ Feature: Mortgage
     Then The number of products is greater than zero
     Examples:
       | Mortgage Reason   | Customer Type    | Amount of Deposit	| Property Value | Repayment Term	|
-      | First time buyers | first-time-buyer | 25000				| 100000         | 20				|
-      | First time buyers | first-time-buyer | 50000				| 200000         | 15				|
+      | First time buyers | a-first-time-buyer | 25000				| 100000         | 20				|
+      | First time buyers | a-first-time-buyer | 50000				| 200000         | 15				|

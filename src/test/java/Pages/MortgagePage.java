@@ -25,6 +25,8 @@ public class MortgagePage extends BasePage
     private final By repaymentTermDropdownLocator = By.id("repayment_term");
     private final By calculateFindButtonLocator = By.id("lnkButFind");
 
+    private final By privacyAcceptButtonLocator = By.id("privacy-accept-button");
+
 
 
     //Methods
@@ -32,7 +34,14 @@ public class MortgagePage extends BasePage
     {
         String mortgagePageURL = BaseURL;
         MyDriver.navigateTo(mortgagePageURL);
+        //This is just here so user can see what is happening in this demo, otherwise it is too fast too see.
         MyDriver.pause(2000);
+
+        //A modal has been added to accept privacy settings.
+        if (IsElementDisplayed(privacyAcceptButtonLocator, 2, MyDriver.driver))
+        {
+            GetClickableElementByLocator(privacyAcceptButtonLocator, MyDriver.driver).click();
+        }
     }
 
     public Boolean CheckPageHeading()
